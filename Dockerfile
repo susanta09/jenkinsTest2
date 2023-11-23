@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk8:latest
-EXPOSE 9090
-ADD target/jenkinTest.jar jenkinTest.jar
-ENTRYPOINT ["java","-jar","/jenkinTest.jar"]
+FROM adoptopenjdk/openjdk11:latest
+COPY target/jenkinTest.jar   /usr/app/
+WORKDIR /usr/app/
+ENTRYPOINT ["java","-jar","jenkinTest.jar"]
